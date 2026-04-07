@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="/Horarios/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OrganizaAí - Agenda Escolar</title>
+  <link rel="stylesheet" href="stylesplanilha.css">
+</head>
+<body>
+  <style>
+    /* Ajusta o título para ficar alinhado */
+.header-content h1 {
+    margin: 0;
+}
+
+/* Alinha todo o conteúdo do header */
+.header-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* empurra o login para a direita */
+    padding: 20px;
+}
+
+/* Estiliza o botão de Login */
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;      /* AUMENTA O TAMANHO DO BOTÃO */
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;        /* AUMENTA A FONTE */
+    transition: 0.3s ease;
+}
+
+.login-btn img {
+    width: 28px;             /* ÍCONE MAIOR */
+    height: 28px;
+}
+
+.login-btn:hover {
+    background-color: rgba(0, 0, 0, 0.55);
+    transform: scale(1.08);  /* efeito mais forte ao passar o mouse */
+}
+  </style>
+  <header>
+    <div class="header-content">
+        <h1>OrganizaAí</h1>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="//127.0.0.1:5500/planilhas.html">Calendário Completo</a>
+            <a href="agendaaluno.html">Agenda do Aluno</a>
+            <a href="//www.ifsc.edu.br/cursos">Cursos</a>
+            <a href="//www.ifsc.edu.br/noticias">Eventos</a>
+            <a href="//www.ifsc.edu.br/fale-conosco">Contato IFSC</a>
+        </nav>
+
+        <a href="login.html" class="login-btn">
+            <img src="../Imagens/login-icon.png" alt="login">
+            Entrar
+        </a>
+    </div>
+</header>
+
+  
+
+  <div class="container">
+
+    <div class="grade">
+      <h2>Grade de Horários</h2>
+      <label for="turmaSelect"><strong>Escolha a turma:</strong></label>
+      <select id="turmaSelect">
+        <option value="">Selecione a turma</option>
+        <option value="plas1">Plásticos 1</option>
+        <option value="plas3">Plásticos 3</option>
+        <option value="adm1">Adm 1</option>
+        <option value="adm2">Adm 2</option>
+        <option value="adm3">Adm 3</option>
+        <option value="info1">Info 1</option>
+        <option value="info2">Info 2</option>
+        <option value="info3">Info 3</option>
+      </select>
+
+  <div id="gradeContainer" style="display: none;">
+  <table id="gradeHorarios">
+    <thead>
+      <tr>
+        <th>Horário</th>
+        <th>Segunda</th>
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+        <th>Sábado</th>
+      </tr>
+    </thead>
+    <tbody id="gradeBody">
+    </tbody>
+  </table>
+  </div>
+
+  <script src="/Lembretes/lembretes.js" defer></script>
+    <div class="lembretes">
+      <h2>Lembretes</h2>
+      <input type="text" id="lembreteInput" placeholder="Adicionar novo lembrete" />
+      <button onclick="adicionarLembrete()">Adicionar</button>
+      <ul id="listaLembretes"></ul>
+    </div>
+  </div>
+</body>
+</html>

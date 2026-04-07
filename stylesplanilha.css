@@ -1,0 +1,230 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background: url("../Imagens/ifsc.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.grade {
+  flex: 3;
+  min-width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.grade:hover {
+  transform: scale(1.01);
+}
+
+.grade h2 {
+  margin-bottom: 15px;
+  color: rgb(31, 88, 192);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+th {
+  background-color: #e8f5e9;
+  color: rgb(13, 59, 146);
+  font-weight: bold;
+}
+
+td:hover {
+  background-color: #f1f8e9;
+}
+
+
+.lembretes {
+  flex: 1;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.lembretes:hover {
+  transform: scale(1.01);
+}
+
+.lembretes h2 {
+  color: rgb(31, 88, 192);
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c8e6c9;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: rgb(31, 88, 192);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
+}
+
+ button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rgb(31, 88, 192);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: rgb(31, 88, 192);
+    }
+
+button:active {
+  transform: scale(0.98);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background-color: #e8f5e9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 5px solid rgb(31, 88, 192);
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+li:hover {
+  background-color: #dcedc8;
+}
+
+nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 12px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+/* Horários */
+    #gradeHorarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#gradeHorarios th, #gradeHorarios td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+#gradeHorarios th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#gradeContainer {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+#gradeBody td {
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+#gradeBody tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+
+#gradeBody tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .grade,
+  .lembretes {
+    width: 100%;
+    margin: 0;
+  }
+
+  .remover {
+  background: transparent;
+  border: none;
+  color: #e53935;
+  font-size: 1.2em;
+  float: right;
+  cursor: pointer;
+  padding-left: 10px;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.remover:hover {
+  color: #c62828;
+  transform: scale(1.2);
+}
+
+
+}

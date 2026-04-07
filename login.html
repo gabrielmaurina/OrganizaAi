@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login - OrganizaAí</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  /* Fundo */
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0e53d4, #6dd5fa);
+    font-family: "Segoe UI", sans-serif;
+    overflow: hidden;
+    animation: fadeIn 1.2s ease forwards;
+  }
+
+  /* Animação do fundo */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Container */
+  .login-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    width: 340px;
+    text-align: center;
+    transform: translateY(40px);
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+  }
+
+  /* Entrada do card */
+  @keyframes slideUp {
+    from {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #1e3e78;
+    font-weight: 600;
+  }
+
+  .input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.65rem;
+    margin-top: 0.3rem;
+    border-radius: 10px;
+    border: 1.5px solid #bcd0ff;
+    font-size: 1rem;
+    transition: 0.2s;
+  }
+
+  input:focus {
+    border-color: #0e53d4;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(14,83,212,0.3);
+  }
+
+  button {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.7rem;
+    border: none;
+    border-radius: 10px;
+    background: #0e53d4;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  button:hover {
+    background: #0639a2;
+  }
+
+  .message {
+    color: #d63031;
+    margin-top: 1rem;
+    min-height: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Tela de transição ao entrar */
+  #transition-screen {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #0e53d4;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>OrganizaAí</h2>
+
+  <form id="login-form">
+    <div class="input-group">
+      <label>E-mail Institucional</label>
+      <input type="text" id="login-email" placeholder="nome@aluno.ifsc.edu.br" required>
+    </div>
+
+    <div class="input-group">
+      <label>Senha</label>
+      <input type="password" id="login-password" placeholder="•••••••" required>
+    </div>
+
+    <button type="submit">Entrar</button>
+
+    <div class="message" id="login-message"></div>
+  </form>
+</div>
+
+<!-- Tela de transição -->
+<div id="transition-screen">Entrando...</div>
+
+<script>
+document.getElementById("login-form").onsubmit = function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("login-email").value.trim();
+  const pass = document.getElementById("login-password").value;
+  const msg = document.getElementById("login-message");
+
+  if (!email.endsWith("@aluno.ifsc.edu.br")) {
+    msg.textContent = "Use seu e-mail institucional (@aluno.ifsc.edu.br)";
+    return;
+  }
+
+  if (pass.length < 3) {
+    msg.textContent = "Senha inválida!";
+    return;
+  }
+
+  // Tela de transição
+  const screen = document.getElementById("transition-screen");
+  screen.style.opacity = "1";
+
+  // Aguarda animar antes de redirecionar
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 900);
+};
+</script>
+
+</body>
+</html>
